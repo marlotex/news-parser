@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from playwright.sync_api import sync_playwright
-from waitress import serve
+# from waitress import serve
 import os
 
 app = Flask(__name__)
@@ -26,4 +26,5 @@ def scrape():
 
 
 if __name__ == "__main__":
-    serve(app, host="0.0.0.0", port=5000)
+    os.system("python -m playwright install")
+    app.run(host="0.0.0.0", port=5000)
